@@ -15,7 +15,7 @@ const ICONS_MAP = {
 };
 
 const SidebarItem = ({ icon, isActive }) => {
-  const strokeColor = isActive ? theme.colors.primaryDark : theme.colors.primaryMutedDark;
+  const strokeColor = isActive ? theme.colors.primaryDark : theme.colors.primaryMutedLight;
 
   return <S.SidebarItem isActive={isActive}>{cloneElement(icon, { stroke: strokeColor })}</S.SidebarItem>;
 };

@@ -25,7 +25,7 @@ export const SidebarContainer = styled.div`
 export const SidebarItems = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${theme.spacing.medium};
+  gap: ${theme.spacing.md};
 `;
 
 export const SidebarItem = styled.div`
