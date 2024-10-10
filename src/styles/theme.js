@@ -4,8 +4,10 @@ const theme = {
     primary: "#26C281",
     primaryLight: "#F7FCFA",
     primaryDark: "#008347",
+    primaryDarker: "#194516",
     primaryMuted: "#E4F6ED",
-    primaryMutedDark: "#BDE9D2",
+    primaryMutedLight: "#BDE9D2",
+    primaryMutedDark: "#9EC59B",
 
     // Secondary Colors
     secondary: "#2ecc71",
@@ -15,14 +17,27 @@ const theme = {
     white: "#FFFFFF",
     black: "#000000",
     textPrimary: "#0F1310",
-    greyDarkest: "#6F7170",
-    greyDarker: "#8C9196",
-    greyLight: "#C9CCCF",
+    grey: {
+      darkest: "#6F7170",
+      darker: "#8C9196",
+      light: "#C9CCCF",
+    },
   },
   spacing: {
-    small: "8px",
-    medium: "16px",
-    large: "24px",
+    xs: "4px",
+    sm: "8px",
+    md: "16px",
+    lg: "24px",
+    xl: "32px",
+  },
+  font: {
+    size: {
+      xs: "12px",
+      sm: "16px",
+      md: "20px",
+      lg: "24px",
+      xl: "28px",
+    },
   },
 };
 
