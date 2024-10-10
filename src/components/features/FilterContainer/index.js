@@ -5,27 +5,24 @@ import { CalendarIcon } from "../../../assets";
 import Dropdown from "../../common/Dropdown";
 import * as S from "./styles";
 
+import { extractOptions } from "../../../services";
+
+const { categoryOptions, decisionOptions, companyOptions } = extractOptions();
+
 const filterOptions = [
   {
     placeholder: "Category",
-    options: [
-      { value: "Loan", label: "Loan" },
-      { value: "Credit Card", label: "Credit Card" },
-      { value: "Insurance", label: "Insurance" },
-    ],
+    options: categoryOptions,
     key: "category",
   },
   {
     placeholder: "Decision",
-    options: [
-      { value: "Upheld", label: "Upheld" },
-      { value: "Rejected", label: "Rejected" },
-    ],
+    options: decisionOptions,
     key: "decision",
   },
   {
     placeholder: "Company",
-    options: [{ value: "Barclays Bank Plc", label: "Barclays Bank Plc" }],
+    options: companyOptions,
     key: "company",
   },
 ];
