@@ -33,6 +33,13 @@ const GlobalStyles = createGlobalStyle`
   body {
     scrollbar-width: none; /* Hide scrollbar for Firefox */
   }
+
+  .react-datepicker-wrapper,
+  .react-datepicker__input-container,
+  .react-datepicker__input-container input {
+      display: block;
+      width: 100%;
+  }
 `;
 
 export default GlobalStyles;
