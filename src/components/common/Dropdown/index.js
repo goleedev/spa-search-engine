@@ -19,8 +19,8 @@ const customSelectStyles = {
   }),
 };
 
-const Dropdown = ({ options, placeholder, value, onChange }) => (
-  <S.SelectWrapper>
+const Dropdown = ({ options, placeholder, value, onChange, width }) => (
+  <S.SelectWrapper width={width}>
     <Select
       styles={customSelectStyles}
       placeholder={placeholder}
