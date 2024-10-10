@@ -24,13 +24,17 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
   return (
     <S.Pagination>
-      <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-        <ChevronArrowIcon />
-      </button>
-      {renderPageButtons()}
-      <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
-        <ChevronArrowIcon className="flip" />
-      </button>
+      {totalPages > 0 && (
+        <>
+          <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
+            <ChevronArrowIcon />
+          </button>
+          {renderPageButtons()}
+          <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+            <ChevronArrowIcon className="flip" />
+          </button>
+        </>
+      )}
     </S.Pagination>
   );
 };
