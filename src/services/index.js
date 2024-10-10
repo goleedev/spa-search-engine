@@ -182,3 +182,18 @@ export const getSearchData = () => {
     },
   ];
 };
+
+export const filterData = ({ data, query, filters }) => {
+  const { category, decision, company, date } = filters;
+  const normalizedQuery = query.toLowerCase();
+
+  return data.filter(item => {
+    const matchesQuery = !query || item.title.toLowerCase().includes(normalizedQuery);
+    const matchesCategory = !category || item.category === category.value;
+    const matchesDecision = !decision || item.decision === decision.value;
+    const matchesCompany = !company || item.company === company.value;
+    const matchesDate = !date || item.date.startsWith(date.value);
+
+    return matchesQuery && matchesCategory && matchesDecision && matchesCompany && matchesDate;
+  });
+};
