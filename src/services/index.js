@@ -200,3 +200,21 @@ export const filterData = ({ data, query, filters }) => {
     return matchesQuery && matchesCategory && matchesDecision && matchesCompany && matchesDate;
   });
 };
+
+export const getUniqueOptions = (data, key) => {
+  return [...new Set(data.map(item => item[key]))].sort().map(value => ({ value, label: value }));
+};
+
+export const extractOptions = () => {
+  const data = getSearchData();
+
+  const categoryOptions = getUniqueOptions(data, "category");
+  const decisionOptions = getUniqueOptions(data, "decision");
+  const companyOptions = getUniqueOptions(data, "company");
+
+  return {
+    categoryOptions,
+    decisionOptions,
+    companyOptions,
+  };
+};
