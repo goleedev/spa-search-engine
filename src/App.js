@@ -1,15 +1,20 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import SearchPage from "./components/pages/Search.js";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+
+import SearchPage from "./components/pages/Search";
+import GlobalStyles from "./GlobalStyles";
 
 const App = () => {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-          <SearchPage />
-        </Route>
-      </Switch>
-    </Router>
+    <>
+      <GlobalStyles />
+      <Router>
+        <Switch>
+          <Route path="/" exact>
+            <SearchPage />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 };
 
