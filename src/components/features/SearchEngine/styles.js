@@ -1,3 +1,5 @@
 import styled from "styled-components";
 
-export const SearchEngine = styled.div``;
+export const SearchEngineContainer = styled.div`
+  padding: 120px 0;
+`;
