@@ -9,24 +9,16 @@ export const UserProfileContainer = styled.div`
   padding: 10px;
 `;
 
-export const ThumbnailContainer = styled.div`
-  width: 48px;
-  height: 48px;
-
-  border: 1px solid ${theme.colors.black};
-`;
-
 export const Thumbnail = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
 
   color: ${theme.colors.primaryDarker};
   background-color: ${theme.colors.primaryMutedDark};
-  box-shadow: 0px 4px 4px 0px #00000040;
 `;
 
 export const UserName = styled.span`

@@ -49,9 +49,7 @@ const Footer = () => (
           <S.LinksContainer key={title}>
             <S.LinksTitle>{title}</S.LinksTitle>
             {items.map(item => (
-              <S.LinkItem key={item} isHome={item === "Home"}>
-                {item}
-              </S.LinkItem>
+              <S.LinkItem key={item}>{item}</S.LinkItem>
             ))}
           </S.LinksContainer>
         ))}

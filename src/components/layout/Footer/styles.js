@@ -54,8 +54,6 @@ export const LinkItem = styled.a`
   cursor: pointer;
 
   color: ${theme.colors.grey.darkest};
-  -webkit-text-stroke: ${({ isHome }) => (isHome ? `1px ${theme.colors.black}` : "none")};
-  text-shadow: ${({ isHome }) => (isHome ? "0 4px 4px rgba(0, 0, 0, 0.25)" : "none")};
 
   &:hover {
     color: ${theme.colors.primary};
