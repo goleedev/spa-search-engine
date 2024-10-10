@@ -38,6 +38,7 @@ const theme = {
       md: "20px",
       lg: "24px",
       xl: "28px",
+      xxl: "44px",
     },
   },
 };
