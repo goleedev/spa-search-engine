@@ -192,7 +192,10 @@ export const filterData = ({ data, query, filters }) => {
     const matchesCategory = !category || item.category === category.value;
     const matchesDecision = !decision || item.decision === decision.value;
     const matchesCompany = !company || item.company === company.value;
-    const matchesDate = !date || item.date.startsWith(date.value);
+    const matchesDate =
+      !date ||
+      ((!date.start || new Date(item.date) >= new Date(date.start)) &&
+        (!date.end || new Date(item.date) <= new Date(date.end)));
 
     return matchesQuery && matchesCategory && matchesDecision && matchesCompany && matchesDate;
   });
