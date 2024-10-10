@@ -1,3 +1,4 @@
+import Footer from "../Footer";
 import Sidebar from "../Sidebar";
 import UserProfile from "../UserProfile";
 import * as S from "./styles";
@@ -13,6 +14,8 @@ const DashboardLayout = ({ children }) => (
 
       {children}
     </S.MainContent>
+
+    <Footer />
   </S.DashboardLayout>
 );
 
