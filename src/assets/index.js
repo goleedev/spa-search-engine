@@ -1,3 +1,4 @@
+export { ReactComponent as CalendarIcon } from "./icons/calendar.svg";
 export { ReactComponent as ContactsIcon } from "./icons/contacts.svg";
 export { ReactComponent as FacebookIcon } from "./icons/facebook.svg";
 export { ReactComponent as FilesIcon } from "./icons/files.svg";
