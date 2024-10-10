@@ -31,5 +31,7 @@ export const Thumbnail = styled.div`
 
 export const UserName = styled.span`
   font-size: ${theme.font.size.md};
+  line-height: ${theme.font.size.xl};
+
   color: ${theme.colors.textPrimary};
 `;
