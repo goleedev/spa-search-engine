@@ -21,6 +21,7 @@ const theme = {
       darkest: "#6F7170",
       darker: "#8C9196",
       light: "#C9CCCF",
+      lighter: "#E4E5E7",
     },
   },
   spacing: {
@@ -32,7 +33,7 @@ const theme = {
   },
   font: {
     size: {
-      xs: "12px",
+      xs: "14px",
       sm: "16px",
       md: "20px",
       lg: "24px",
