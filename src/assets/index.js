@@ -5,6 +5,7 @@ export { ReactComponent as HomeIcon } from "./icons/home.svg";
 export { ReactComponent as InfoIcon } from "./icons/info.svg";
 export { ReactComponent as InstagramIcon } from "./icons/instagram.svg";
 export { ReactComponent as LinkedinIcon } from "./icons/linkedin.svg";
+export { ReactComponent as LogoIcon } from "./icons/logo.svg";
 export { ReactComponent as SearchIcon } from "./icons/search.svg";
 export { ReactComponent as SettingIcon } from "./icons/setting.svg";
 export { ReactComponent as SuitcaseIcon } from "./icons/suitcase.svg";
