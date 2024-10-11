@@ -1,6 +1,6 @@
 import * as S from "./styles";
 
-const InputField = ({ value, onChange, placeholder = "Search", icon: Icon, width }) => {
+const Input = ({ value, onChange, placeholder = "Search", icon: Icon, width }) => {
   return (
     <S.InputContainer>
       {Icon && <Icon data-testid="icon" />}
@@ -9,4 +9,4 @@ const InputField = ({ value, onChange, placeholder = "Search", icon: Icon, width
   );
 };
 
-export default InputField;
+export default Input;
