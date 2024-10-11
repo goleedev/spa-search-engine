@@ -5,7 +5,7 @@ import theme from "../../../styles/theme";
 export const InputWrapper = styled.div`
   display: flex;
   align-items: center;
-  border: 1px solid ${theme.colors.grey.light};
+  border: 1px solid ${theme.colors.grey.darker};
   border-radius: ${theme.spacing.xs};
   padding: 14px ${theme.spacing.md};
   width: ${({ width }) => width || "100%"};
@@ -19,7 +19,7 @@ export const InputWrapper = styled.div`
   }
 `;
 
-export const InputField = styled.input`
+export const Input = styled.input`
   flex: 1;
   border: none;
   outline: none;
