@@ -20,7 +20,7 @@ const customSelectStyles = {
 };
 
 const Dropdown = ({ options, placeholder, value, onChange, width }) => (
-  <S.SelectWrapper data-testid="select-wrapper" width={width}>
+  <S.SelectContainer data-testid="select-wrapper" width={width}>
     <Select
       styles={customSelectStyles}
       placeholder={placeholder}
@@ -29,7 +29,7 @@ const Dropdown = ({ options, placeholder, value, onChange, width }) => (
       onChange={onChange}
       components={{ IndicatorSeparator: () => null }}
     />
-  </S.SelectWrapper>
+  </S.SelectContainer>
 );
 
 export default Dropdown;

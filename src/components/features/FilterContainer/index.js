@@ -47,7 +47,7 @@ const FilterContainer = ({ filters, onFilterChange, onClearFilters }) => {
             onChange={option => onFilterChange(key, option)}
           />
         ))}
-        <S.DatePickerWrapper>
+        <S.DatePickerContainer>
           <CalendarIcon />
           <DatePicker
             selected={filters.date?.start ?? INITIAL_DATE}
@@ -58,7 +58,7 @@ const FilterContainer = ({ filters, onFilterChange, onClearFilters }) => {
             placeholderText="Date"
             customInput={<S.DateInput />}
           />
-        </S.DatePickerWrapper>
+        </S.DatePickerContainer>
       </S.FilterGroup>
 
       <S.ClearFiltersButton onClick={onClearFilters}>Clear Filters</S.ClearFiltersButton>

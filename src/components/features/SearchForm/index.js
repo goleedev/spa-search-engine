@@ -10,12 +10,12 @@ const SearchForm = ({ query, setQuery, onSearch }) => {
   };
 
   return (
-    <S.SearchForm onSubmit={handleSubmit}>
+    <S.SearchFormContainer onSubmit={handleSubmit}>
       <InputField placeholder="Search" value={query} onChange={e => setQuery(e.target.value)} icon={SearchIcon} />
       <Button type="submit" width="192px">
         Search
       </Button>
-    </S.SearchForm>
+    </S.SearchFormContainer>
   );
 };
 

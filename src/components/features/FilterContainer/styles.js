@@ -17,7 +17,7 @@ export const FilterGroup = styled.div`
   padding-bottom: ${theme.spacing.xl};
 `;
 
-export const DatePickerWrapper = styled.div`
+export const DatePickerContainer = styled.div`
   position: relative;
   display: flex;
   align-items: center;

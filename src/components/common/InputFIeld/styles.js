@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import theme from "../../../styles/theme";
 
-export const InputWrapper = styled.div`
+export const InputContainer = styled.div`
   display: flex;
   align-items: center;
   border: 1px solid ${theme.colors.grey.darker};
