@@ -37,15 +37,16 @@ const useSearch = () => {
   }, []);
 
   const handleSearch = useCallback(() => {
-    const filtered = filterData({ data, query, filters: initialFilterState });
+    const filtered = filterData({ data, query, filters });
     setQueryBasedResults(filtered);
     setFilteredData(filtered);
-  }, [data, query]);
+  }, [data, query, filters]);
 
   const handleFilterChange = useCallback(
     (key, selectedOption) => {
       const updatedFilters = { ...filters, [key]: selectedOption };
       setFilters(updatedFilters);
+
       const filtered = filterData({ data: queryBasedResults, query, filters: updatedFilters });
       setFilteredData(filtered);
     },
