@@ -4,13 +4,11 @@ import userEvent from "@testing-library/user-event";
 import { filterData, getSearchData } from "../services";
 import useSearch from "./useSearch";
 
-// Mock the getSearchData function
 jest.mock("../services", () => ({
   getSearchData: jest.fn(),
   filterData: jest.fn(),
 }));
 
-// Create a simple test component to use the useSearch hook
 const TestComponent = () => {
   const {
     data,
@@ -54,18 +52,14 @@ describe("useSearch", () => {
   test("updates query and searches", async () => {
     render(<TestComponent />);
 
-    // Set the query
     await userEvent.click(screen.getByText("Set Query"));
 
-    // Ensure the query state has updated before proceeding
     await waitFor(() => {
       expect(screen.getByText("Query: test")).toBeInTheDocument();
     });
 
-    // Trigger the search action
     userEvent.click(screen.getByText("Search"));
 
-    // Check that filterData was called with the updated query
     expect(filterData).toHaveBeenCalledWith(expect.objectContaining({ query: "test" }));
   });
 

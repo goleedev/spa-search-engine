@@ -8,17 +8,14 @@ describe("Button Component", () => {
   it("renders the button with children text", () => {
     render(<Button onClick={mockOnClick}>Click Me</Button>);
 
-    // Check if the button is rendered with the correct text
     expect(screen.getByRole("button", { name: /click me/i })).toBeInTheDocument();
   });
 
   it("calls onClick when clicked", () => {
     render(<Button onClick={mockOnClick}>Click Me</Button>);
 
-    // Simulate a click event
     fireEvent.click(screen.getByRole("button", { name: /click me/i }));
 
-    // Check if the mock function is called once
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
 
@@ -30,7 +27,6 @@ describe("Button Component", () => {
       </Button>
     );
 
-    // Check if the button has the correct width style
     const button = screen.getByRole("button", { name: /click me/i });
     expect(button).toHaveStyle(`width: ${customWidth}`);
   });

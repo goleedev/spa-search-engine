@@ -15,7 +15,6 @@ describe("Dropdown Component", () => {
     const customWidth = "300px";
     render(<Dropdown options={options} placeholder="Select an option" onChange={mockOnChange} width={customWidth} />);
 
-    // Check if the wrapper has the correct width style using data-testid
     const wrapper = screen.getByTestId("select-wrapper");
     expect(wrapper).toHaveStyle(`width: ${customWidth}`);
   });
