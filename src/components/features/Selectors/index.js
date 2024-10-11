@@ -8,8 +8,8 @@ const itemsPerPageOptions = [
   { value: 20, label: "20" },
 ];
 const sortByOptions = [
-  { value: "date", label: "Sort by Date" },
-  { value: "title", label: "Sort by Title" },
+  { value: "date", label: "Date" },
+  { value: "title", label: "Title" },
 ];
 
 const Selectors = ({ itemsPerPage, sortBy, onItemsPerPageChange, onSortChange, totalResults, currentPage }) => {

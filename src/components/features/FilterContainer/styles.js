@@ -60,9 +60,9 @@ export const ClearFiltersButton = styled.button`
   cursor: pointer;
 
   background-color: transparent;
-  color: ${theme.colors.primary};
+  color: ${theme.colors.primaryDark};
 
   &:hover {
-    color: ${theme.colors.primaryDark};
+    color: ${theme.colors.primaryDarker};
   }
 `;
