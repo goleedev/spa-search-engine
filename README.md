@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a React-based project designed for a frontend take-home task. It includes a search engine interface with advanced filtering, pagination, and results display capabilities. The project uses custom hooks, reusable components, and a clean project structure to ensure maintainability and scalability.
+This is a React-based project designed for a frontend take-home task. It includes a search engine interface with advanced filtering, pagination, and results display capabilities. The project uses custom hooks, reusable components, and a clean project structure to ensure maintainability and scalability. Common components and custom hooks include test code to ensure reliability and proper functionality.
 
 ## Table of Contents
 
@@ -52,45 +52,24 @@ The project is organized as follows:
 │       └── index.js              # Barrel file to export all common components
 ├── features/                     # Feature-specific components
 │   ├── FilterContainer/          # Manages the filter UI and logic
-│       ├── index.js              # FilterContainer component logic
-│       └── styles.js             # Styles for the FilterContainer component
 │   ├── PaginationContainer/      # Manages the pagination logic and UI
-│       ├── index.js              # PaginationContainer component logic
-│       └── styles.js             # Styles for the PaginationContainer component
 │   ├── ResultsContainer/         # Displays the list of search results
-│       ├── index.js              # ResultsContainer component logic
-│       └── styles.js             # Styles for the ResultsContainer component
 │   ├── SearchEngine/             # Main component that manages the search functionality
-│       ├── index.js              # Search engine logic and rendering
-│       └── styles.js             # Styles for the SearchEngine component
 │   ├── SearchForm/               # Handles the search input and submit functionality
-│       ├── index.js              # SearchForm component logic
-│       └── styles.js             # Styles for the SearchForm component
 │   ├── SearchHeader/             # Displays the header for the search interface
-│       ├── index.js              # SearchHeader component logic
-│       └── styles.js             # Styles for the SearchHeader component
-│   ├── Selectors/                # Handles items-per-page and sorting options
-│       ├── index.js              # Selectors component logic
-│       └── styles.js             # Styles for the Selectors component
-│   └── index.js                  # Barrel file to export all feature components
+│   └── Selectors/                # Handles items-per-page and sorting options
 ├── layout/                       # Layout components for the overall structure of the app
 │   ├── DashboardLayout/          # Main layout for the dashboard page
-│       ├── index.js              # DashboardLayout component logic
-│       └── styles.js             # Styles for the DashboardLayout component
 │   ├── Footer/                   # Footer component for the app
-│       ├── index.js              # Footer component logic
-│       └── styles.js             # Styles for the Footer component
 │   ├── Sidebar/                  # Sidebar navigation component
-│       ├── index.js              # Sidebar component logic
-│       └── styles.js             # Styles for the Sidebar component
-│   └── UserProfile/              # Displays user profile info in the layout
-│       ├── index.js              # UserProfile component logic
-│       └── styles.js             # Styles for the UserProfile component
+│   └── UserProfile/               # Displays user profile info in the layout
 ├── pages/                        # Main pages of the application
 │   └── Search.js                 # Page for the search interface
 ├── hooks/                        # Custom hooks for reusable logic
 │   ├── usePagination.js          # Manages pagination state and logic
+│   ├── usePagination.test.js     # Test file for usePagination hook, ensuring pagination state management works correctly.
 │   └── useSearch.js              # Manages search, filtering, and sorting logic
+│   └── useSearch.test.js         # Test file for useSearch hook, validating the search and filter functionalities.
 ├── services/                     # Services and API interactions
 │   └── index.js                  # Contains data fetching and data processing logic
 ├── styles/                       # Global and theme-based styles
@@ -110,6 +89,7 @@ The project is organized as follows:
 - **Reusable Components**: Includes components like buttons, dropdowns, and input fields for easy reuse.
 - **Custom Hooks**: `usePagination` and `useSearch` hooks encapsulate complex logic for better readability and reusability.
 - **Theming**: Centralized theme configuration for easy customization of colors, fonts, and spacing.
+- **Test Coverage**: Common components and custom hooks include test code to ensure functionality and prevent regressions.
 
 ## Installation
 
@@ -149,5 +129,6 @@ npm install && npm run start
 - **React Hooks**: Custom hooks for managing stateful logic (usePagination and useSearch).
 - **React-Select**: For creating custom dropdowns with a consistent look and feel.
 - **React-DatePicker**: For selecting date ranges, used to filter results based on date.
+- **React Testing Library**: For testing components in a way that mimics user interaction, ensuring reliable and user-focused tests.
 - **Moment.js**: For date formatting and manipulation.
 - **JavaScript ES6**: Modern JavaScript syntax and features.
