@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 import usePagination from "../../../hooks/usePagination";
 import useSearch from "../../../hooks/useSearch";
@@ -26,7 +26,7 @@ const SearchEngine = () => {
     setCurrentPage,
   } = useSearch();
 
-  const itemsPerPage = 5;
+  const [itemsPerPage, setItemsPerPage] = useState(5);
   const { totalPages, startIndex, endIndex, handlePageChange } = usePagination(
     filteredData.length,
     itemsPerPage,
@@ -47,6 +47,7 @@ const SearchEngine = () => {
         itemsPerPage={itemsPerPage}
         sortBy={sortBy}
         onItemsPerPageChange={value => {
+          setItemsPerPage(value);
           setCurrentPage(1);
           handlePageChange(1, value);
         }}
