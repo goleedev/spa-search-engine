@@ -25,7 +25,6 @@ const SearchEngine = () => {
     currentPage,
     setCurrentPage,
   } = useSearch();
-
   const [itemsPerPage, setItemsPerPage] = useState(5);
   const { totalPages, startIndex, endIndex, handlePageChange } = usePagination(
     filteredData.length,

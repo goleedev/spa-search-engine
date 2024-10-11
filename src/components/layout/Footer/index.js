@@ -23,10 +23,10 @@ const links = [
 const socialMediaLinks = [
   { href: "#", icon: <FacebookIcon />, alt: "Facebook" },
   { href: "#", icon: <TwitterIcon />, alt: "Twitter" },
-  { href: "#", icon: <LinkedinIcon />, alt: "LinkedIn" },
-  { href: "#", icon: <YoutubeIcon />, alt: "YouTube" },
-  { href: "#", icon: <TiktokIcon />, alt: "Tiktok" },
   { href: "#", icon: <InstagramIcon />, alt: "Instagram" },
+  { href: "#", icon: <YoutubeIcon />, alt: "YouTube" },
+  { href: "#", icon: <LinkedinIcon />, alt: "LinkedIn" },
+  { href: "#", icon: <TiktokIcon />, alt: "Tiktok" },
 ];
 
 const Footer = () => (

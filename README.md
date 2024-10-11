@@ -47,7 +47,7 @@ The project is organized as follows:
 │   └── common/                   # Common components used throughout the app
 │       ├── Button/               # Custom button component
 │       ├── Dropdown/             # Custom dropdown component (uses react-select)
-│       ├── Input/                # Input component with optional icon support
+│       ├── InputField/           # Input component with optional icon support
 │       ├── Pagination/           # Pagination component for navigating pages
 │       └── index.js              # Barrel file to export all common components
 ├── features/                     # Feature-specific components

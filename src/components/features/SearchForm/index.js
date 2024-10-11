@@ -1,6 +1,6 @@
 import { SearchIcon } from "../../../assets";
 import Button from "../../common/Button";
-import Input from "../../common/Input";
+import InputField from "../../common/InputField";
 import * as S from "./styles";
 
 const SearchForm = ({ query, setQuery, onSearch }) => {
@@ -11,7 +11,7 @@ const SearchForm = ({ query, setQuery, onSearch }) => {
 
   return (
     <S.SearchFormContainer onSubmit={handleSubmit}>
-      <Input placeholder="Search" value={query} onChange={e => setQuery(e.target.value)} icon={SearchIcon} />
+      <InputField placeholder="Search" value={query} onChange={e => setQuery(e.target.value)} icon={SearchIcon} />
       <Button type="submit" width="192px">
         Search
       </Button>

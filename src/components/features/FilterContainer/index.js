@@ -2,13 +2,13 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 import { CalendarIcon } from "../../../assets";
+import { extractOptions } from "../../../services";
 import Dropdown from "../../common/Dropdown";
 import * as S from "./styles";
 
-import { extractOptions } from "../../../services";
+const INITIAL_DATE = "2022-01-01";
 
 const { categoryOptions, decisionOptions, companyOptions } = extractOptions();
-
 const filterOptions = [
   {
     placeholder: "Category",
@@ -26,8 +26,6 @@ const filterOptions = [
     key: "company",
   },
 ];
-
-const INITIAL_DATE = "2022-01-01";
 
 const FilterContainer = ({ filters, onFilterChange, onClearFilters }) => {
   const handleDateChange = dates => {
