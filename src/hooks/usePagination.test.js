@@ -38,10 +38,10 @@ describe("usePagination", () => {
     const { result } = renderHook(() => usePagination(totalItems, itemsPerPage, 1, setCurrentPage));
 
     act(() => {
-      result.current.handlePageChange(0); // Below range
+      result.current.handlePageChange(0);
     });
     act(() => {
-      result.current.handlePageChange(6); // Above range
+      result.current.handlePageChange(6);
     });
 
     expect(setCurrentPage).not.toHaveBeenCalled();
