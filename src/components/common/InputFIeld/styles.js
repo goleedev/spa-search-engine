@@ -10,7 +10,6 @@ export const InputWrapper = styled.div`
   padding: 14px ${theme.spacing.md};
   width: ${({ width }) => width || "100%"};
   height: 48px;
-  max-width: 600px;
 
   svg {
     margin-right: ${theme.spacing.xs};
