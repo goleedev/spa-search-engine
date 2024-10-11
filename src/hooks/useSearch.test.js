@@ -4,13 +4,13 @@ import userEvent from "@testing-library/user-event";
 import { filterData, getSearchData } from "../services";
 import useSearch from "./useSearch";
 
-// Mock the `getSearchData` function
+// Mock the getSearchData function
 jest.mock("../services", () => ({
   getSearchData: jest.fn(),
   filterData: jest.fn(),
 }));
 
-// Create a simple test component to use the `useSearch` hook
+// Create a simple test component to use the useSearch hook
 const TestComponent = () => {
   const {
     data,
