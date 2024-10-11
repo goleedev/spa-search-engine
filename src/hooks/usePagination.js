@@ -1,8 +1,6 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo } from "react";
 
-const usePagination = (totalItems, itemsPerPage) => {
-  const [currentPage, setCurrentPage] = useState(1);
-
+const usePagination = (totalItems, itemsPerPage, currentPage, setCurrentPage) => {
   const totalPages = useMemo(() => Math.ceil(totalItems / itemsPerPage), [totalItems, itemsPerPage]);
 
   const handlePageChange = useCallback(
@@ -11,18 +9,19 @@ const usePagination = (totalItems, itemsPerPage) => {
         setCurrentPage(newPage);
       }
     },
-    [totalPages]
+    [totalPages, setCurrentPage]
   );
 
   const startIndex = useMemo(() => (currentPage - 1) * itemsPerPage, [currentPage, itemsPerPage]);
-  const endIndex = useMemo(() => startIndex + itemsPerPage, [startIndex, itemsPerPage]);
+  const endIndex = useMemo(
+    () => Math.min(startIndex + itemsPerPage, totalItems),
+    [startIndex, itemsPerPage, totalItems]
+  );
 
   return {
-    currentPage,
     totalPages,
     startIndex,
     endIndex,
-    setCurrentPage,
     handlePageChange,
   };
 };

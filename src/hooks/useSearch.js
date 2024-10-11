@@ -17,6 +17,7 @@ const useSearch = () => {
   const [filters, setFilters] = useState(initialFilterState);
   const [sortBy, setSortBy] = useState("date");
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,10 +37,16 @@ const useSearch = () => {
     fetchData();
   }, []);
 
+  const applyFilters = baseData => {
+    return filterData({ data: baseData, query, filters });
+  };
+
   const handleSearch = useCallback(() => {
-    const filtered = filterData({ data, query, filters });
-    setQueryBasedResults(filtered);
-    setFilteredData(filtered);
+    const queryResults = filterData({ data, query, filters: initialFilterState });
+    setQueryBasedResults(queryResults);
+    setFilteredData(applyFilters(queryResults));
+    setCurrentPage(1);
+    // eslint-disable-next-line
   }, [data, query, filters]);
 
   const handleFilterChange = useCallback(
@@ -49,6 +56,7 @@ const useSearch = () => {
 
       const filtered = filterData({ data: queryBasedResults, query, filters: updatedFilters });
       setFilteredData(filtered);
+      setCurrentPage(1);
     },
     [queryBasedResults, query, filters]
   );
@@ -56,7 +64,8 @@ const useSearch = () => {
   const handleSortChange = useCallback(
     value => {
       setSortBy(value);
-      sortData(filteredData, value);
+      const sorted = sortData(filteredData, value);
+      setFilteredData(sorted);
     },
     [filteredData]
   );
@@ -64,7 +73,17 @@ const useSearch = () => {
   const handleClearFilters = useCallback(() => {
     setFilters(initialFilterState);
     setFilteredData(queryBasedResults);
+    setCurrentPage(1);
   }, [queryBasedResults]);
+
+  const handleClearQuery = useCallback(() => {
+    setQuery("");
+    const filtered = applyFilters(data);
+    setQueryBasedResults(data);
+    setFilteredData(filtered);
+    setCurrentPage(1);
+    // eslint-disable-next-line
+  }, [data, filters]);
 
   const sortData = (data, sortBy) => {
     return [...data].sort((a, b) => {
@@ -90,6 +109,9 @@ const useSearch = () => {
     handleFilterChange,
     handleSortChange,
     handleClearFilters,
+    handleClearQuery,
+    currentPage,
+    setCurrentPage,
   };
 };
 

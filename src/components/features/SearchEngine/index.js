@@ -22,12 +22,16 @@ const SearchEngine = () => {
     handleFilterChange,
     handleSortChange,
     handleClearFilters,
+    currentPage,
+    setCurrentPage,
   } = useSearch();
 
   const itemsPerPage = 5;
-  const { currentPage, totalPages, startIndex, endIndex, handlePageChange } = usePagination(
+  const { totalPages, startIndex, endIndex, handlePageChange } = usePagination(
     filteredData.length,
-    itemsPerPage
+    itemsPerPage,
+    currentPage,
+    setCurrentPage
   );
 
   const currentData = useMemo(() => filteredData.slice(startIndex, endIndex), [filteredData, startIndex, endIndex]);
@@ -42,7 +46,10 @@ const SearchEngine = () => {
         currentPage={currentPage}
         itemsPerPage={itemsPerPage}
         sortBy={sortBy}
-        onItemsPerPageChange={value => handlePageChange(1, value)}
+        onItemsPerPageChange={value => {
+          setCurrentPage(1);
+          handlePageChange(1, value);
+        }}
         onSortChange={handleSortChange}
       />
       {!loading ? <ResultsContainer data={currentData} /> : <p>Loading...</p>}
